@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  ansible-master:
+    build: ./ansible/
+    container_name: ansible-master
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.2
+    extra_hosts:
+      - "ansible-node1:172.16.238.3"
+      - "ansible-node2:172.16.238.4"
+  ansible-node1:
+    build: ./ansible-node/
+    container_name: ansible-node1
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.3
+    extra_hosts:
+      - "ansible-master:172.16.238.2"
+      - "ansible-node2:172.16.238.4" 
+  ansible-node2:
+    build: ./ansible-node/
+    container_name: ansible-node2
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.4
+    extra_hosts:
+      - "ansible-master:172.16.238.2"
+      - "ansible-node1:172.16.238.3"    
+networks:
+  app_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.238.0/24
