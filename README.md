@@ -42,7 +42,7 @@ exit
 ssh ansible-node2
 
 # quit SSH connection to ansible-node2
-quit
+exit
 
 # quit the connection to ansible-master, you'll return to your host
 exit
