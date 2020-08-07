@@ -9,6 +9,8 @@ services:
     extra_hosts:
       - "ansible-node1:172.16.238.3"
       - "ansible-node2:172.16.238.4"
+    volumes:
+      - "./playground:/root/playground"
   ansible-node1:
     build: ./ansible-node/
     container_name: ansible-node1

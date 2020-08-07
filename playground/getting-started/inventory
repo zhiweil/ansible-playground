@@ -1,0 +1,6 @@
+[local]
+localhost ansible_connection=local
+
+[allhosts]
+ansible-node1
+ansible-node2
