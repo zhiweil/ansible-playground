@@ -49,5 +49,5 @@ exit
 ```
 
 ## Basic Concepts
-Please read [this](https://docs.ansible.com/ansible/latest/user_guide/basic_concepts.html) document before jumping into playground. 
+Please read [this](https://docs.ansible.com/ansible/latest/user_guide/basic_concepts.html) document before jumping onto playground. 
 

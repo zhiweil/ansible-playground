@@ -1,11 +1,10 @@
 # Getting Started
-
-## Add hosts to system inventory
 SSH to ansible-master if you have not done it. All the operations in this section run on ansible-master.
 ```bash
 docker exec -it ansible-master bash
 ```
 
+## Add hosts to system inventory
 If no inventory is specified, the inventory at /etc/ansible/hosts will be applied. Add a new group "allhosts" to this INI file. The file will look like this after the modification. 
 ```ini
 [local]
@@ -41,8 +40,9 @@ ansible-node1 | SUCCESS => {
 }
 ```
 
-You can ping hosts in multiple groups or even all the hosts at the same time. Try the following commands and see the differences. 
+You can ping a specific host, hosts in multiple groups or even all the hosts at the same time. Try the following commands and see the differences. 
 ```bash
+ansible ansible-node1 -m ping
 ansible all -m ping
 ansible local:allhosts -m ping
 ```
