@@ -1,7 +1,6 @@
 # Ansible Playground
 This project spins up a docker-compose environments which allows you to run Ansible playbooks without worring about setting up any VM. 
 SSH is also setup between Ansible master and remote nodes. 
-![Ansible Playground Overview](./ansible-playground.png)
 
 ## Prerequesite
 Install the following tools before running the examples in this repository. You may also need to install some dependecies before installing these tools. 
@@ -12,6 +11,9 @@ Install the following tools before running the examples in this repository. You 
 The environment comprises of three docker containers running on a docker network 172.16.238.0/24. 
 * docker container "ansible-master" is the Ansible master node which runs Ubuntu with Ansible already installed.
 * docker containers "ansible-node1" and "ansible-node2" are the Ubuntu systems to be configured.
+
+![Ansible Playground Overview](./ansible-playground.png)
+
 ## Create Environment
 * To start up a new environment:
 ```bash
