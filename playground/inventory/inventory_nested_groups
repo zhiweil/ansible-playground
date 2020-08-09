@@ -1,0 +1,12 @@
+[local]
+localhost ansible_connection=local
+
+[building1]
+ansible-node1
+
+[building2]
+ansible-node2
+
+[allhosts:children]
+building1
+building2

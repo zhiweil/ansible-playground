@@ -2,6 +2,8 @@
 This project spins up a docker-compose environments which allows you to run Ansible playbooks without worring about setting up any VM. 
 SSH is also setup between Ansible control node and managed nodes. 
 
+**NOTE: The examples are tested on Ansible 2.9.**
+
 ## Prerequesite
 Install the following tools before running the examples in this repository. You may also need to install some dependecies before installing these tools. 
 * [Docker CE](https://docs.docker.com/engine/install/)
@@ -51,3 +53,7 @@ exit
 ## Basic Concepts
 Please read [this](https://docs.ansible.com/ansible/latest/user_guide/basic_concepts.html) document before jumping onto playground. 
 
+
+## Index
+* [Getting Started](./getting-started/README.md)
+* [Inventory](./inventory/README.md)
