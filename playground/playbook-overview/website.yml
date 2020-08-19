@@ -1,0 +1,36 @@
+---
+- hosts: webservers
+  remote_user: root
+
+  tasks:
+  - name: install apache2 
+    apt:
+      name: apache2
+      update_cache: yes
+      state: latest
+  - name: enabled mod_rewrite
+    apache2_module: name=rewrite state=present
+    notify:
+      - restart apache2
+  - name: apache2 listen on port 8080
+    template: 
+      src: ports.conf.j2 
+      dest: /etc/apache2/ports.conf
+    notify:
+      - restart apache2
+  - name: apache2 virtualhost on port 8080
+    template: 
+      src: 000-default.conf.j2 
+      dest: /etc/apache2/sites-available/000-default.conf 
+    notify:
+      - restart apache2      
+  - name: add website home page
+    template: 
+      src: index.html.j2 
+      dest: /var/www/html/index.html 
+    notify:
+      - restart apache2   
+
+  handlers:
+    - name: restart apache2
+      service: name=apache2 state=restarted

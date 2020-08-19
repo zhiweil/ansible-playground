@@ -57,3 +57,4 @@ Please read [this](https://docs.ansible.com/ansible/latest/user_guide/basic_conc
 ## Index
 * [Getting Started](./playground/getting-started/README.md)
 * [Inventory](./playground/inventory/README.md)
+* [Playbook Overview](./playground/playbook-overview/README.md)
