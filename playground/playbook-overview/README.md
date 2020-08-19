@@ -14,7 +14,7 @@ docker-compose down
 docker-compose up
 
 # logging into the anisble master docker image
-docker exec -it docker-master bash
+docker exec -it ansible-master bash
 
 # inside ansible master docker image, go to the folder of this lab
 cd /root/playground/playbook-overview
@@ -46,8 +46,8 @@ The directory tree of folder /root/playground/playbook-overview looks like this:
 ```
 * The file "website.yml" is the ansible playbook used in this lab.
 * The file "inventory" is the inventory of ansible playbook used in this lab.
-* The folder "host_vars" contains variables for each managed nodes.
-* The folder "templates" contains the templates used in this lap.
+* The folder "host_vars" contains variables for each managed node.
+* The folder "templates" contains the templates used in this lab.
 
 ## Inventory
 The [inventory](./inventory) file defines a single group "webservers" which contains two nodes.
@@ -60,7 +60,7 @@ ansible-node2
 ## Host variables
 The files under folder "[host_vars](./host_vars)" define variables for each host of Ansible inventory in YAML format, one file for each host. The naming of these files follows the names in inventory file, with an optional extension "yml". 
 
-The files simple customize the webserver names by variable "ansible_node". 
+The files simply customize the webserver names by variable "ansible_node". 
 
 ### ansible-node1.yml
 ```yml
@@ -75,7 +75,7 @@ ansible_node: "Ansible node 2"
 ```
 
 ## Templates
-The files under folder "[templates](./templates)" define templates in Jinja2 format for Apache server.
+The files under folder "[templates](./templates)" define templates in Jinja2 format for Apache servers.
 
 The files [ports.conf.j2](./templates/ports.conf.j2) and [000-default.conf.j2](./templates/000-default.conf.j2) configure Apache to serve its website over port 8080 other than the default port 80. 
 
@@ -91,7 +91,7 @@ The [index.html.j2](./templates/index.html.j2) defines the home page of Apache w
 The variable "ansible_node" will be replaced by each Apache instance with its name. 
 
 ## Playbook
-The file [website.yml](./website.yml) defines the playbook to create two instances of Apache servers. 
+The file [website.yml](./website.yml) defines the playbook to create two instances of Apache server. 
 ```yml
 ---
 - hosts: webservers
@@ -138,8 +138,8 @@ At the top most level of this playbook, there are four fileds:
 
 At the top most leve of Ansible playbook tasks, there are three fields:
 * The "name" specifies the task name.
-* By convention, the field under the "name" is a Ansible services, it has its own setting fields, which are service specific. 
-* The "notify" specifies the actions to take when a task finishes. These actions are defined in the "handers" field. 
+* By convention, the field under the "name" is a Ansible service, it has its own setting fields, which are service specific. 
+* The "notify" specifies the actions to take when a task finishes. These actions are defined in the "handlers" field. 
 
 ## Run playbook
 Under the foler /root/playground/playbook-overview, run ansible playbook:
