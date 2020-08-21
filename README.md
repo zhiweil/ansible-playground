@@ -55,6 +55,8 @@ Please read [this](https://docs.ansible.com/ansible/latest/user_guide/basic_conc
 
 
 ## Index
-* [Getting Started](./playground/getting-started/README.md)
-* [Inventory](./playground/inventory/README.md)
-* [Playbook Overview](./playground/playbook-overview/README.md)
+* [Getting Started](./ansible/playground/getting-started/README.md)
+* [Inventory](./ansible/playground/inventory/README.md)
+* [Playbook Overview](./ansible/playground/playbook-overview/README.md)
+* [Reuse playbook by importing](./ansible/playground/playbook-import/README.md)
+* [Reuse playbook by including](./ansible/playground/playbook-include/README.md)

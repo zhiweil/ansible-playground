@@ -1,0 +1,11 @@
+---
+- hosts: webservers
+  remote_user: root
+
+  tasks:
+    - import_tasks: ./plays/install-apache.yml
+    - import_tasks: ./plays/configure-apache.yml
+
+  handlers:
+    - name: restart apache2
+      service: name=apache2 state=restarted
